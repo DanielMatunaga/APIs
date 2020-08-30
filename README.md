@@ -19,7 +19,13 @@ Solução:
   
 Instruções:
 
-- O projeto precisa ser buildado. Utilize o comando: ./gradlew clean build na pasta raiz do projeto.
+- O projeto precisa ser buildado. Utilize o seguinte comando: 
+./gradlew clean build na pasta raiz do projeto.
+
 - Construa sua imagem docker utilizando o Dockerfile.
+
+- Inicie sua aplicação no docker mapeando a porta 8080. O seguinte comando pode ser utilizado: 
+docker run -p 8080:8080 --name transacoes transacoes
+
 - Divirta-se :)
 
