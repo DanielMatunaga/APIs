@@ -2,15 +2,12 @@ package com.daniel.transactions.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.daniel.transactions.entity.Transaction;
 import com.daniel.transactions.exception.InvalidRequestException;
 
 /**
  * Generic class of commands.
  */
-@Service
 public interface TransactionService {
 
 	/**

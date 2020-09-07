@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.daniel.transactions.entity.Transaction;
 import com.daniel.transactions.exception.InvalidRequestException;
 import com.daniel.transactions.service.TransactionService;
-import com.daniel.transactions.service.ValidatorService;
+import com.daniel.transactions.validator.TransactionValidator;
 
 /**
  * The rest controller that will handle all rest endpoints.
@@ -23,7 +23,7 @@ public class Controller {
 	private TransactionService transactionService;
 
 	@Autowired
-	private ValidatorService validatorService;
+	private TransactionValidator transactionValidator;
 
 	/**
 	 * Returns an list of transactions.
@@ -39,7 +39,7 @@ public class Controller {
 	public ResponseEntity<List<Transaction>> getTransacoes(@PathVariable int id, @PathVariable int year,
 			@PathVariable int month) throws InvalidRequestException {
 
-		validatorService.validate(id, year, month);
+		transactionValidator.validate(id, year, month);
 
 		List<Transaction> response = transactionService.getAll(id, year, month);
 

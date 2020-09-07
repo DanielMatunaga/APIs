@@ -3,7 +3,7 @@ package com.daniel.transactions.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.daniel.transactions.dao.TransactionDAO;
 import com.daniel.transactions.entity.Transaction;
@@ -12,7 +12,7 @@ import com.daniel.transactions.exception.InvalidRequestException;
 /**
  * Command that will execute a get transaction.
  */
-@Component
+@Service
 public class TransactionImpl implements TransactionService {
 
 	@Autowired
