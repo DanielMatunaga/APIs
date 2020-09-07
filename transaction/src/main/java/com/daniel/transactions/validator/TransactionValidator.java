@@ -12,7 +12,7 @@ import com.daniel.transactions.exception.InvalidRequestException;
  * Validator of path parameters of a transaction.
  */
 @Component
-public class GetTransactionsValidator extends BaseValidator {
+public class TransactionValidator extends BaseValidator {
 
 	public void validate(int id, int year, int month) throws InvalidRequestException {
 

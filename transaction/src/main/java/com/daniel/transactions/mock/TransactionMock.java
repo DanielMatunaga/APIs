@@ -14,7 +14,7 @@ import com.daniel.transactions.entity.Transaction;
  * Simulator of a database.
  */
 @Component
-public class TransactionsMock implements TransactionMockService {
+public class TransactionMock implements TransactionMockService {
 
 	// This is a seed that changes everytime the application goes up.
 	// We are going to have the same seed until we stop the application.
