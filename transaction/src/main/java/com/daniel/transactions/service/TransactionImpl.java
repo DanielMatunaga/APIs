@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.daniel.transactions.dao.TransactionDAO;
 import com.daniel.transactions.entity.Transaction;
@@ -19,6 +20,7 @@ public class TransactionImpl implements TransactionService {
 	private TransactionDAO transactionDao;
 
 	@Override
+	@Transactional
 	public List<Transaction> getAll(int id, int year, int month) throws InvalidRequestException {
 		return transactionDao.getAll(id, year, month);
 	}

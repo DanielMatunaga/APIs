@@ -3,7 +3,7 @@ package com.daniel.transactions.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.daniel.transactions.entity.Transaction;
 import com.daniel.transactions.mock.TransactionMock;
@@ -11,7 +11,7 @@ import com.daniel.transactions.mock.TransactionMock;
 /**
  * Data access class to do interface between the database and the application.
  */
-@Component
+@Repository
 public class TransactionDAOImpl implements TransactionDAO {
 
 	@Autowired
