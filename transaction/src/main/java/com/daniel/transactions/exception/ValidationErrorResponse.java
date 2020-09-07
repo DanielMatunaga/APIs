@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 /**
  * Error response.
  */
-public class ErrorResponse
+public class ValidationErrorResponse
 {
     /**
      * The http status of the error.
@@ -22,7 +22,7 @@ public class ErrorResponse
      */
     private String message;
 
-    public ErrorResponse(HttpStatus status, long timeStamp, String message)
+    public ValidationErrorResponse(HttpStatus status, long timeStamp, String message)
     {
         this.status = status;
         this.timeStamp = timeStamp;

@@ -12,32 +12,14 @@ import com.daniel.transactions.mock.TransactionMockService;
  * Data access class to do interface between the database and the application.
  */
 @Component
-public class TransactionDAO implements GenericDAO<Transaction>
-{
-    @Autowired
-    private TransactionMockService transactionMock;
+public class TransactionDAO {
 
-    @Override
-    public Transaction create()
-    {
-        return null;
-    }
+	@Autowired
+	private TransactionMockService transactionMock;
 
-    @Override
-    public List<Transaction> get(int id, int month, int year)
-    {
-        // If someday we resolve to implement a real API we can change to use a Database instead of a mock
-        return transactionMock.generateTransactions(id, month, year);
-    }
-
-    @Override
-    public Transaction update()
-    {
-        return null;
-    }
-
-    @Override
-    public void delete()
-    {
-    }
+	public List<Transaction> getAll(int id, int year, int month) {
+		// If someday we resolve to implement a real API we can change to use a Database
+		// instead of a mock
+		return transactionMock.generateTransactions(id, year, month);
+	}
 }

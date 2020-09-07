@@ -20,15 +20,15 @@ import com.daniel.transactions.entity.Transaction;
  * Service to generate transactions.
  */
 @Service
-public interface TransactionMockService
-{
-    /**
-     * Generates transactions based on parameters passed.
-     *
-     * @param id The id of the user.
-     * @param month The month these transactions are in.
-     * @param year The year these transactions are in.
-     * @return List<{@Link Transaction}> Returns a list of transactions based on parameters passed.
-     */
-    List<Transaction> generateTransactions(int id, int month, int year);
+public interface TransactionMockService {
+	/**
+	 * Generates transactions based on parameters passed.
+	 *
+	 * @param id    The id of the user.
+	 * @param month The month these transactions are in.
+	 * @param year  The year these transactions are in.
+	 * @return List<{@Link Transaction}> Returns a list of transactions based on
+	 *         parameters passed.
+	 */
+	List<Transaction> generateTransactions(int id, int year, int month);
 }
