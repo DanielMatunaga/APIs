@@ -1,5 +1,6 @@
 package com.daniel.transactions.validator;
 
+import static com.daniel.transactions.common.CommonExceptionsConstants.NULL_PARAMETER_REQUEST_EXCEPTION_MESSAGE;
 import static com.daniel.transactions.common.CommonExceptionsConstants.RANGE_PARAMETER_REQUEST_EXCEPTION_MESSAGE;
 
 import java.util.Calendar;
@@ -12,7 +13,7 @@ import com.daniel.transactions.exception.InvalidRequestException;
  * Validator of path parameters of a transaction.
  */
 @Component
-public class TransactionValidator extends BaseValidator {
+public class TransactionValidator {
 
 	public void validate(int id, int year, int month) throws InvalidRequestException {
 
@@ -57,6 +58,17 @@ public class TransactionValidator extends BaseValidator {
 		if (id < 1000 || id > 100000000) {
 			throw new InvalidRequestException(RANGE_PARAMETER_REQUEST_EXCEPTION_MESSAGE, "id");
 		}
+	}
+
+	private void requiredNotNull(String fieldName, Object field) throws InvalidRequestException {
+		if (field == null || isZero(field)) {
+			throw new InvalidRequestException(NULL_PARAMETER_REQUEST_EXCEPTION_MESSAGE, fieldName);
+		}
+
+	}
+
+	private boolean isZero(Object obj) {
+		return obj instanceof Integer && (Integer) obj == 0;
 	}
 
 }
